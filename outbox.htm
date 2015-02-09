@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Huber</title>
+
+  <link rel="shortcut icon" href="/ico/favicon.ico">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="/ico/apple-touch-icon-57-precomposed.png">
+
+  <!--[if IE]><!-->
+    <!--[if IE 6]>
+      <script type="text/javascript" src="js/ie6.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+      <script  type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" type="text/javascript"></script>
+      <script src="//code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+      <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js" type="text/javascript"></script>
+      <script src="js/ddr-ecma5-1.2.1-min.js" type="text/javascript"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/json3/3.3.2/json3.min.js" type="text/javascript"></script>
+      <script src="js/ie8.js" type="text/javascript"></script>
+    <![endif]-->
+    <!--[if gte IE 9]>
+      <!-- jQuery 2.x for ie9+ and non IE browsers -->
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js" type="text/javascript"></script>
+      <script src="js/ie9.js" type="text/javascript"></script>
+    <![endif]-->
+  <![endif]-->
+  <!--[if !IE]>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="js/not_ie.js" type="text/javascript"></script>
+  <![endif]-->
+  <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+  <link rel="stylesheet" href="themes/themeA.min.css" />
+  <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js" type="text/javascript"></script>
+
+  <style type="text/css">
+    body, html, form { height:100%; min-height:100%; margin:0em; }   
+    #wrapper { height: 1%; } /* needed to remove the page scroll bar. !important; */
+  </style>
+
+  <script src="js/ajax.js" type="text/javascript"></script>
+</head>
+<body>
+  <div id="outbox" class="wrapper" data-role="page" data-theme="b" data-cache="false" style="background-image:url('images/tiling_stripes.gif'); height: 1%;">
+
+  	<div data-role="header" data-theme="b" >
+      <div data-role="header" data-theme="b" data-add-back-btn="true" >
+        <h1 id="from_bulding_name"></h1>
+      </div>
+	  </div><!-- /header -->  
+
+    <div role="main" data-theme="f" class="ui-content" style="padding:.5em;">
+
+      <div id="display_envelope" data-theme="d" data-form="ui-body-d" class="ui-body ui-body-d ui-corner-all">
+        <label for="yes_no_envelope">Are you volunteering to deliver <span id="bulding_name_envelope"></span> mail?</label>
+        <fieldset class="ui-grid-a">
+          <div class="ui-block-a" style="text-align:left">
+            <img src="../images/envelope.png" alt="envelope" />
+          </div>
+          <div class="ui-block-b">
+            <span id="envelope_count" class="ui-li-count" style="position:relative; float:left; margin-top:10%;"></span>
+            <div style="display:inline-block; float:right;" >
+              <select id="yes_no_envelope" name="yes_no_envelope" data-role="slider" >
+                <option value="off">No</option>
+                <option value="on">Yes</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div id="display_package" runat="server" data-theme="d" data-form="ui-body-d" class="ui-body ui-body-d ui-corner-all">
+        <label for="yes_no_package">Are you volunteering to deliver <span id="bulding_name_package"></span> packages?</label>
+        <fieldset class="ui-grid-a">
+          <div class="ui-block-a" style="text-align:left">
+            <img src="../images/package.png" alt="package" />
+          </div>
+          <div class="ui-block-b">
+            <span id="package_count" class="ui-li-count" style="position:relative; float:left; margin-top:10%;"></span>
+            <div style="display:inline-block; float:right;" >
+              <select id="yes_no_package" name="yes_no_package" data-role="slider" >
+                <option value="off">No</option>
+                <option value="on">Yes</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div data-theme="d" data-form="ui-body-d" class="ui-body ui-body-d ui-corner-all" style="padding:12px;">
+        <div style="float:left">
+          <b>Confirmation</b>
+        </div>
+        <div style="float:right">
+          <button id="btnSave" data-theme="a" class="ui-btn ui-btn-inline ui-icon-check ui-btn-icon-left">I agree</button>
+        </div>
+      </div>
+
+    </div><!-- /main -->
+
+		<div data-role="footer" data-position="fixed" data-theme="e">
+      <div data-role="navbar">
+        <ul>
+          <li>
+			      <a href="#map_gallery" data-role="button" data-theme="e" class="ui-btn-e ui-btn-up-e">
+              <img src="../images/Hillsboro_Logo_Horizontal_Oregon_580x160_t.png" height="26px" alt="" />
+            </a>
+          </li>
+        </ul>
+      </div>
+		</div><!-- /footer -->
+  </div><!-- /page -->
+
+</body>
+</html>
